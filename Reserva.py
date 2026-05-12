@@ -1,9 +1,6 @@
 class Reserva:
 
-    def __init__(self,
-                 cliente,
-                 servicio,
-                 duracion):
+    def __init__(self, cliente, servicio, duracion):
 
         if cliente is None:
             raise ValueError("Cliente inválido")
@@ -12,9 +9,7 @@ class Reserva:
             raise ValueError("Servicio inválido")
 
         if duracion <= 0:
-            raise ValueError(
-                "Duración debe ser mayor a 0"
-            )
+            raise ValueError("Duración debe ser mayor a 0")
 
         self.cliente = cliente
         self.servicio = servicio
@@ -24,9 +19,7 @@ class Reserva:
     def confirmar(self):
 
         if self.estado != "pendiente":
-            raise Exception(
-                "La reserva no se puede confirmar"
-            )
+            raise Exception("La reserva no se puede confirmar")
 
         self.estado = "confirmada"
 
@@ -35,9 +28,7 @@ class Reserva:
     def cancelar(self):
 
         if self.estado == "cancelada":
-            raise Exception(
-                "La reserva ya está cancelada"
-            )
+            raise Exception("La reserva ya está cancelada")
 
         self.estado = "cancelada"
 
@@ -46,13 +37,9 @@ class Reserva:
     def procesar(self):
 
         if self.estado != "confirmada":
-            raise Exception(
-                "Debe confirmar la reserva"
-            )
+            raise Exception("Debe confirmar la reserva")
 
-        costo = self.servicio.calcular_costo(
-            self.duracion
-        )
+        costo = self.servicio.calcular_costo(self.duracion)
 
         print(f"Costo total: {costo}")
                 
