@@ -1,4 +1,8 @@
 # MAIN.py
+from clientes import Cliente
+from servicios import ReservaSala, AlquilerEquipo
+from Reserva import Reserva
+
 print("\n--- CASOS VALIDOS ---")
 
 try:
