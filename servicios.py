@@ -5,8 +5,8 @@ class ServicioNoDisponible(Exception):
     pass
 
 class Servicio(ABC, EntidadSistema):
-    def _init_(self, id_servicio: int, nombre: str, precio_base: float):
-        super()._init_(id_servicio)
+    def __init__(self, id_servicio: int, nombre: str, precio_base: float):
+        super().__init__(id_servicio)
         self.nombre = nombre
         self.precio_base = precio_base
 
@@ -25,8 +25,8 @@ class Servicio(ABC, EntidadSistema):
             raise ServicioNoDisponible("El servicio debe tener nombre")
 
 class ReservaSala(Servicio):
-    def _init_(self, id_servicio, nombre, precio_hora, capacidad, tiene_proyector):
-        super()._init_(id_servicio, nombre, precio_hora)
+    def __init__(self, id_servicio, nombre, precio_hora, capacidad, tiene_proyector):
+        super().__init__(id_servicio, nombre, precio_hora)
         self.capacidad = capacidad
         self.tiene_proyector = tiene_proyector
 
@@ -44,8 +44,8 @@ class ReservaSala(Servicio):
         return f"ReservaSala: '{self.nombre}' - Cap: {self.capacidad} - {proyector}"
 
 class AlquilerEquipo(Servicio):
-    def _init_(self, id_servicio, nombre, precio_dia, marca, stock):
-        super()._init_(id_servicio, nombre, precio_dia)
+    def __init__(self, id_servicio, nombre, precio_dia, marca, stock):
+        super().__init__(id_servicio, nombre, precio_dia)
         self.marca = marca
         self.stock = stock
 
@@ -62,8 +62,8 @@ class AlquilerEquipo(Servicio):
         return f"AlquilerEquipo: '{self.nombre}' - Marca: {self.marca} - Stock: {self.stock}"
 
 class Asesoria(Servicio):
-    def _init_(self, id_servicio, nombre, precio_hora, especialista, area):
-        super()._init_(id_servicio, nombre, precio_hora)
+    def __init__(self, id_servicio, nombre, precio_hora, especialista, area):
+        super().__init__(id_servicio, nombre, precio_hora)
         self.especialista = especialista
         self.area = area
 

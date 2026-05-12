@@ -5,14 +5,14 @@ class ClienteInvalido(Exception):
     pass
 
 class EntidadSistema(ABC):
-    def _init_(self, id_entidad: int):
+    def __init__(self, id_entidad: int):
         self._id = id_entidad
     
     def get_id(self) -> int:
         return self._id
 
 class Cliente(EntidadSistema):
-    def _init_(self, id_cliente: int, nombre: str, email: str, telefono: str):
+    def __init__(self, id_cliente: int, nombre: str, email: str, telefono: str):
         super()._init_(id_cliente)
         self.__nombre = ""
         self.__email = ""
