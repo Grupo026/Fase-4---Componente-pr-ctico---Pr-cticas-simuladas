@@ -4,7 +4,7 @@ from clientes import EntidadSistema
 class ServicioNoDisponible(Exception):
     pass
 
-class Servicio(ABC, EntidadSistema):
+class Servicio(EntidadSistema):
     def __init__(self, id_servicio: int, nombre: str, precio_base: float):
         super().__init__(id_servicio)
         self.nombre = nombre

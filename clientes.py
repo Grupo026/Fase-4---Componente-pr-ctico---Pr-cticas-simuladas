@@ -13,7 +13,7 @@ class EntidadSistema(ABC):
 
 class Cliente(EntidadSistema):
     def __init__(self, id_cliente: int, nombre: str, email: str, telefono: str):
-        super()._init_(id_cliente)
+        super().__init__(id_cliente)
         self.__nombre = ""
         self.__email = ""
         self.__telefono = ""
