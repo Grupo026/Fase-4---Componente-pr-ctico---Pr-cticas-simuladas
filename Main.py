@@ -1,3 +1,4 @@
+python 
 # MAIN.py
 from clientes import Cliente
 from servicios import ReservaSala, AlquilerEquipo
