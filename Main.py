@@ -1,4 +1,3 @@
-python 
 # MAIN.py
 from clientes import Cliente
 from servicios import ReservaSala, AlquilerEquipo
@@ -10,7 +9,13 @@ try:
 
     cliente1 = Cliente(1, "Juan", "juan@gmail.com", "3001234567")
 
-    servicio1 = ReservaSala( "S1", "Sala de reuniones", 50000, 20, True)
+    servicio1 = ReservaSala( 
+        "S1", 
+        "Sala de reuniones",
+        50000, 
+        20, 
+        True
+    )
 
     reserva1 = Reserva(cliente1,servicio1,2)
 
@@ -33,7 +38,13 @@ except Exception as e: print(e)
 # PRECIO NEGATIVO
 try:
 
-    servicio2 = ReservaSala( "S2", "Sala", -10, 10, False)
+    servicio2 = ReservaSala( 
+        "S2", 
+        "Sala", 
+        -10, 
+        10, 
+        False
+    )
 
 except Exception as e: print(e)
 
@@ -42,7 +53,13 @@ try:
 
     cliente3 = Cliente(3,"Luis","luis@gmail.com","3001112222")
 
-    servicio3 = AlquilerEquipo( "E1", "Proyector",20, "Epson", 5)
+    servicio3 = AlquilerEquipo( 
+        "E1", 
+        "Proyector",
+        20, 
+        "Epson",
+        5
+    )
 
     reserva2 = Reserva(cliente3,servicio3,0)
 
