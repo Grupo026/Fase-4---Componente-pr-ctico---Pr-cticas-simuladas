@@ -51,7 +51,7 @@ class Cliente(EntidadSistema):
             raise ClienteInvalido("Cliente con datos incompletos")
         return True
     
-    def _str_(self):
+    def __str__(self):
         return f"Cliente[{self.get_id()}]: {self.__nombre} - {self.__email}"
     
     
