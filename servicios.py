@@ -8,7 +8,7 @@ class Servicio(EntidadSistema):
     def __init__(self, id_servicio: int, nombre: str, precio_base: float):
         super().__init__(id_servicio)
         self.nombre = nombre
-        self.precio_base
+        self.precio_base = precio_base
         self.validar()
 
     @abstractmethod
